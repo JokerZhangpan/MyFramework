@@ -1,0 +1,16 @@
+1、send_keys实现上传
+
+    找到input标签时，直接输入一个文件地址即可上传。
+
+2、Autolt实现上传
+
+    Autolt是一个用了进行windows GUI进行自动化测试的软件，可以模拟键盘鼠标，鼠标移动和窗口/控件的组合来实现自动化任务。
+
+    Autolt Windows Info:    用来识别Windows控件信息。
+    Compile Script to.exe:  用于将AutoIt生成exe执行文件。
+    Run Script:             用于执行AutoIt脚本。
+    SciTE Script Editor:    用于编写AutoIt脚本。
+
+
+    Autolt脚本运行正常后，将脚本生成exe后试用os.system(.exe)执行脚本。
+
