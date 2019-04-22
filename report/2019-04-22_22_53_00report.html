@@ -1,0 +1,63 @@
+
+
+Running tests... 
+----------------------------------------------------------------------
+ test_search_selenium_ide (test_baidu.Baidu) ... ERROR (0.008584)s
+ test_search_setting (test_baidu.Baidu) ... ERROR (0.002804)s
+
+======================================================================
+ERROR [0.008584s]: test_baidu.Baidu.test_search_selenium_ide
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    stdin=PIPE)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jokerzhang/Desktop/MyFramework/case/test_baidu.py", line 23, in setUp
+    self.driver = webdriver.Chrome()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    self.service.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 83, in start
+    os.path.basename(self.path), self.start_error_message)
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
+
+======================================================================
+ERROR [0.002804s]: test_baidu.Baidu.test_search_setting
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    stdin=PIPE)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jokerzhang/Desktop/MyFramework/case/test_baidu.py", line 23, in setUp
+    self.driver = webdriver.Chrome()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    self.service.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 83, in start
+    os.path.basename(self.path), self.start_error_message)
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0:00:00
+
+FAILED
+ (Errors=2)
+
+Generating HTML reports... 
+reports/TestResults_test_baidu.Baidu_2019-04-22_22-53-00.html
