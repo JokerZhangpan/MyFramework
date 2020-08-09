@@ -370,16 +370,6 @@ def mouse_move_to_element(driver, element_path):
     return ActionChains(driver).move_to_element(element_path).perform()
 
 
-def send_keys(path, *key):
-    """
-
-    :param path: 待操作元素的path
-    :param key: 模拟按键
-    :return: 执行结果
-    """
-
-    return path.send_keys(key)
-
 
 """
 expected_conditions 提供的预期条件判断方法
