@@ -5,8 +5,8 @@ author: JokerZhang
 data: 2019-03-18
 """
 
-from HtmlTestRunner import HTMLTestRunner
 import time
+from HTMLTestRunner import HTMLTestRunner
 
 
 def generate_report(test_report, suite):

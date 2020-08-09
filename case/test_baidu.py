@@ -23,7 +23,6 @@ class Baidu(unittest.TestCase):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.base_url = base_url
-        self.veritificationErrors = []
         self.accept_next_alert = True
 
     def test_search_selenium_ide(self):
@@ -60,9 +59,7 @@ class Baidu(unittest.TestCase):
             pathApi.close_alert_and_get_its_text(driver, self.accept_next_alert)
 
     def tearDown(self):
-
         self.driver.quit()
-        self.assertEqual([], self.veritificationErrors)
 
 
 if __name__ == "__main__":
