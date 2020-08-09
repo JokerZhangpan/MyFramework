@@ -37,6 +37,8 @@ if __name__ == '__main__':
 
     generateReport.generate_report(test_report, discover)
     new_report = findNewReport.new_report(test_report)
+    sendMail(new_report)
+
 
 
 

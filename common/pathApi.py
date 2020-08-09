@@ -370,7 +370,6 @@ def mouse_move_to_element(driver, element_path):
     return ActionChains(driver).move_to_element(element_path).perform()
 
 
-
 """
 expected_conditions 提供的预期条件判断方法
 
