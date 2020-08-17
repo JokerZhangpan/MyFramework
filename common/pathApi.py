@@ -13,6 +13,7 @@ from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
 
 
 def by_id(driver, element_id, time=10):
@@ -25,8 +26,8 @@ def by_id(driver, element_id, time=10):
     """
 
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_id(element_id)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_element_located((By.ID, element_id)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -42,8 +43,8 @@ def by_ids(driver, elements_id, time=10):
     :return: 获得一组元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_id(elements_id)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.ID, elements_id)))
 
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
@@ -60,8 +61,8 @@ def by_name(driver, name, time=10):
     :return: 获得元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_name(name)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_element_located((By.NAME, name)))
     except NoSuchElementException as e:
         print("页面无此元素！", e)
     else:
@@ -77,8 +78,8 @@ def by_names(driver, name, time):
     :return: 获得一组元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_elements_by_name(name)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.NAME, name)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -94,8 +95,8 @@ def by_class_name(driver, class_name, time=10):
     :return: 获得元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_class_name(class_name)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_element_located((By.CLASS_NAME, class_name)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -111,8 +112,8 @@ def by_class_names(driver, class_name, time=10):
     :return: 获得一组元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_class_name(class_name)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.CLASS_NAME, class_name)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -128,8 +129,8 @@ def by_tag_name(driver, tag_name, time=10):
     :return: 获得元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_tag_name(tag_name)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_element_located((By.TAG_NAME, tag_name)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -145,8 +146,8 @@ def by_tag_names(driver, tag_name, time=10):
     :return: 获得一组元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_tag_name(tag_name)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.TAG_NAME, tag_name)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -162,8 +163,8 @@ def by_link_text(driver, link_text, time=10):
     :return: 获得元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_link_text(link_text)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_element_located((By.LINK_TEXT, link_text)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -179,8 +180,8 @@ def by_link_texts(driver, link_text, time=10):
     :return: 获得一组元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_elements_by_link_text(link_text)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.LINK_TEXT, link_text)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -196,8 +197,8 @@ def by_partial_link_text(driver, partial_link_text, time=10):
     :return: 获得元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_partial_link_text(partial_link_text)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_element_located((By.PARTIAL_LINK_TEXT, partial_link_text)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -213,8 +214,8 @@ def by_partial_link_texts(driver, partial_link_text, time=10):
     :return: 获得一组元素定位
     """
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_elements_by_partial_link_text(partial_link_text)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.PARTIAL_LINK_TEXT, partial_link_text)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -232,7 +233,7 @@ def by_xpath(driver, path, time=10):
 
     try:
         WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_xpath(path)))
+            EC.visibility_of_element_located((By.XPATH, path)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -243,14 +244,14 @@ def by_xpaths(driver, paths, time=10):
     """
     使用xpath定位一组元素，并添加显性等待时间，若10s内未找到元素，将打印异常信息。
     :param driver: 浏览器驱动
-    :param path: 待定位元素的xpath
+    :param paths: 待定位元素的xpath
     :param time: 显性等待时间
     :return: 获得一组元素定位
     """
 
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_elements_by_xpath(paths)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.XPATH, paths)))
     except NoSuchElementException as e:
         print("当前无此元素！", e)
     else:
@@ -267,8 +268,8 @@ def by_css_selector(driver, css, time=10):
     """
 
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_element_by_css_selector(css)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, css)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
@@ -285,8 +286,8 @@ def by_css_selectors(driver, css, time=10):
     """
 
     try:
-        WebDriverWait(driver, time).until(
-            EC.presence_of_all_elements_located(driver.find_elements_by_css_selector(css)))
+        WebDriverWait(driver, time, 0.5).until(
+            EC.visibility_of_any_elements_located((By.CSS_SELECTOR, css)))
     except NoSuchElementException as e:
         print("当前页面无此元素！", e)
     else:
